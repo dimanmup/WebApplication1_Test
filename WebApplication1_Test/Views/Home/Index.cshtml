@@ -3,5 +3,5 @@
 }
 @(Html.Kendo().MultiSelect().Name("X")
     .AutoClose(false)
-    .BindTo(new SelectListItem[] {new SelectListItem { Text = "X", Value = "xxx" }})
+    .BindTo(new SelectListItem[] {new SelectListItem { Text = SharedLocalizer["Test"].Value, Value = SharedLocalizer["Test"].Value }})
     .HtmlAttributes(new { style = "width:100%;max-width:400px;" }))

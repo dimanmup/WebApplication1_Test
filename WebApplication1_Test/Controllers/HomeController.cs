@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WebApplication1_Test.Models;
 
@@ -18,15 +19,24 @@ namespace WebApplication1_Test.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        /// <summary>
+        /// Устанавливает культуру.
+        /// </summary>
+        /// <param name="culture">Код культуры.</param>
+        /// <param name="returnUrl">URL представления.</param>
+        /// <returns>Исходное представление.</returns>
+        [HttpPost]
+        public IActionResult SetCulture(string culture)
         {
-            return View();
-        }
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
+            );
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            string origin = Request.Headers["Referer"];
+
+            return Redirect(origin);
         }
     }
 }

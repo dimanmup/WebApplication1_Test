@@ -21,6 +21,7 @@
     <script src="~/js/Kendo/kendo.aspnetmvc.min.js"></script>
 </head>
 <body>
+    <div>@await Html.PartialAsync("Header")</div>
     <main>@RenderBody()</main>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
