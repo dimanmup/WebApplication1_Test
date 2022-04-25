@@ -117,16 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="SignIn" xml:space="preserve">
-    <value>Вход</value>
+  <data name="Email" xml:space="preserve">
+    <value>Почта</value>
   </data>
-  <data name="SignUp" xml:space="preserve">
-    <value>Регистрация</value>
+  <data name="EmailIncorrect" xml:space="preserve">
+    <value>Поле "{0}" не содержит допустимый адрес электронной почты.</value>
+    <comment>format string</comment>
   </data>
-  <data name="Submit" xml:space="preserve">
-    <value>Отправить</value>
+  <data name="Password" xml:space="preserve">
+    <value>Пароль</value>
   </data>
-  <data name="welcome" xml:space="preserve">
-    <value>Добро пожаловать!</value>
+  <data name="PasswordConfirmed" xml:space="preserve">
+    <value>Подтверждение пароля</value>
+  </data>
+  <data name="PasswordNotConfirmed" xml:space="preserve">
+    <value>Пароль не подтвержден.</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>Поле "{0}" обязательно.</value>
+    <comment>format string</comment>
+  </data>
+  <data name="StringLengthIncorrect" xml:space="preserve">
+    <value>Поле "{0}" должно содержать {2} - {1} символов.</value>
+    <comment>format string</comment>
+  </data>
+  <data name="StringLengthOverMax" xml:space="preserve">
+    <value>Поле "{0}" не должно содержать более {1} символов.</value>
+    <comment>format string</comment>
   </data>
 </root>

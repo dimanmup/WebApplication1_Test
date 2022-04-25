@@ -1,18 +1,23 @@
-html {
-  font-size: 14px;
+label {
+    font-weight: bold;
+    margin: 0 0 5px 0 !important;
 }
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+[id^='account-form'] {
+    margin: 0 auto;
+    max-width: 400px;
 }
-
-html {
-  position: relative;
-  min-height: 100%;
+[id^='account-form'] .k-textbox,
+#popup .k-textbox {
+    width: 100%;
 }
-
-body {
-  margin-bottom: 60px;
+#popup textarea {
+    padding: 8px;
+    height: 200px;
+}
+#show-passwords {
+    top: 0;
+    right: 0;
+    border: none;
+    background-color: #c6d0dc3b;
+    height: 100%;
 }

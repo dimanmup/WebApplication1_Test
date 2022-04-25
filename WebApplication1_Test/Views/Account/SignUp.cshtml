@@ -1,0 +1,44 @@
+﻿@model SignUpModel
+<script>
+    function showHidePasswordValue() {
+        if ($("#Password").attr("type") == "password") {
+            $("#Password").attr("type", "text");
+            $("#PasswordConfirmed").attr("type", "text");
+            $("#password-visibility").attr("src", "@Url.Content("~/img/visible.png")");
+        } else {
+            $("#Password").attr("type", "password");
+            $("#PasswordConfirmed").attr("type", "password");
+            $("#password-visibility").attr("src", "@Url.Content("~/img/hidden.png")");
+        }
+        $("#Password").focus();
+    }
+</script>
+<h1 class="mg-t-15 text-center">@SharedLocalizer["SignUp"]</h1>
+<hr />
+@using (Html.BeginForm("SignUp", "Account", FormMethod.Post, new { id = "account-form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    <div>
+        @Html.LabelFor(m => m.Email)
+        <br />
+        @Html.Kendo().TextBoxFor(m => m.Email).HtmlAttributes(new { @maxlength = "100" })
+    </div>
+    <div class="mg-t-10">
+        <div>@Html.LabelFor(m => m.Password)</div>
+        <div class="pos-rel">
+            @Html.Kendo().TextBoxFor(m => m.Password).HtmlAttributes(new { @maxlength = "100", type = "password" })
+            <button type="button" class="k-button pos-abs d-block" id="show-passwords" onclick="showHidePasswordValue()">
+                <img id="password-visibility" src="~/img/hidden.png" alt="password visibility" />
+            </button>
+        </div>        
+    </div>
+    <div class="mg-t-10">
+        @Html.LabelFor(m => m.PasswordConfirmed)
+        <br />
+        @Html.Kendo().TextBoxFor(m => m.PasswordConfirmed).HtmlAttributes(new { @maxlength = "100", type = "password" })
+    </div>
+    <div class="mg-t-20 mobile-text-align-right">
+        <button type="submit" class="k-button">@SharedLocalizer["Submit"]</button>
+    </div>
+}

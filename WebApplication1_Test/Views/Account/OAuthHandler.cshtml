@@ -1,0 +1,9 @@
+﻿<div id="loading-banner"></div>
+<script>
+    $(document).ready(function () {
+        let idx = location.href.indexOf("#");
+        if (idx > -1) {
+            window.location.href = "/Account/YandexOAuthHandler?" + document.location.hash.substring(1);
+        }
+    });
+</script>
