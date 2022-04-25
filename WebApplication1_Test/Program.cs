@@ -1,4 +1,6 @@
+using DAL;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 
 CultureInfo[] supportedCultures = new CultureInfo[]
@@ -30,6 +32,11 @@ builder.Services.AddKendo();
 // Отмена автоматического перевода JSON в camal-case в HTTP-response.
 builder.Services.AddMvc()
     .AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
+
+// Чтобы context прилетал в конструктор контроллера.
+builder.Services.AddDbContext<AppDbContext>(options => options
+    .UseSqlite(builder.Configuration.GetConnectionString("SQLite"), 
+       options => options.MigrationsAssembly("WebApplication1_Test")));
 #endregion
 
 #region app
