@@ -1,8 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@(Html.Kendo().MultiSelect().Name("X")
+    .AutoClose(false)
+    .BindTo(new SelectListItem[] {new SelectListItem { Text = "X", Value = "xxx" }})
+    .HtmlAttributes(new { style = "width:100%;max-width:400px;" }))
