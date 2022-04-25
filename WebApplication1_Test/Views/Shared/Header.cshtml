@@ -44,6 +44,26 @@
                             }
                         </div>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a id="navbar-dropdown_info"
+                           role="button"
+                           href="@ViewBag.InfoMenuCurrentItemUrl"
+                           class="nav-link dropdown-toggle"
+                           data-toggle="dropdown"
+                           aria-haspopup="true"
+                           aria-expanded="false">
+                            <span class="nav-link-menu-header">
+                                <span class="k-icon k-i-info"></span>
+                                <span>@(ViewBag.InfoMenuCurrentItem == null ? SharedLocalizer["Info"].Value : ViewBag.InfoMenuCurrentItem)</span>
+                            </span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbar-dropdown_info">
+                           <a class="dropdown-item" asp-area="" asp-controller="Info" asp-action="GenError500Tree">Вызвать ошибку 500</a>
+                           <a class="dropdown-item" asp-area="" asp-controller="Info" asp-action="ForAuthenticated">Для пользователя в системе</a>
+                           <a class="dropdown-item" asp-area="" asp-controller="Info" asp-action="ForAuthorized">Для пользователя с ролью МАСТЕР</a>
+                           <a class="dropdown-item" asp-area="" asp-controller="Info" asp-action="AllUsers">Все пользователи</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>

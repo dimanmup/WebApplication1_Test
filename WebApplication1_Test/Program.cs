@@ -40,35 +40,27 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     .AddCookie(options =>
     {
         options.LoginPath = new PathString("/Error/Page401");
+        options.AccessDeniedPath = new PathString("/Error/Page403");
     });
 #endregion
 
 #region app
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
-
+app.UseExceptionHandler("/Error");
+app.UseStatusCodePages(context => WebApplication1_Test.Helper.HttpErrorCatcher(context.HttpContext));
+app.UseHsts();
 app.UseRequestLocalization(new RequestLocalizationOptions
 {
     DefaultRequestCulture = new RequestCulture("ru-RU"),
     SupportedCultures = supportedCultures,
     SupportedUICultures = supportedCultures
 });
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
