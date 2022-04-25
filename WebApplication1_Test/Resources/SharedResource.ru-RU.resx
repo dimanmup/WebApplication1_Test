@@ -117,6 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="EmailOrPasswordInvalid" xml:space="preserve">
+    <value>Неверная почта, имя или пароль.</value>
+  </data>
+  <data name="MustBeStrongPassword" xml:space="preserve">
+    <value>Поле "{0}" должно содержать хотя бы одну латинскую букву ('a'-'z', 'A'-'Z'), цифру ('0'-'9') и один специфичный знак ('*', '_').</value>
+    <comment>format string</comment>
+  </data>
   <data name="SignIn" xml:space="preserve">
     <value>Вход</value>
   </data>
@@ -125,6 +132,10 @@
   </data>
   <data name="Submit" xml:space="preserve">
     <value>Отправить</value>
+  </data>
+  <data name="UserAlreadyExists" xml:space="preserve">
+    <value>Пользователь "{0}" уже существует</value>
+    <comment>format string</comment>
   </data>
   <data name="welcome" xml:space="preserve">
     <value>Добро пожаловать!</value>

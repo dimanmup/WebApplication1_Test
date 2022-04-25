@@ -7,7 +7,7 @@ namespace WebApplication1_Test.Attributes
 {
     public class StrongPasswordAttribute : ValidationAttribute
     {
-        private ResourceManager rm = new ResourceManager("Neomaster.Resources.SharedResource", typeof(SharedResource).Assembly);
+        private ResourceManager rm = new ResourceManager("WebApplication1_Test.Resources.SharedResource", typeof(SharedResource).Assembly);
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {

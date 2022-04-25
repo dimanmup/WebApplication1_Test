@@ -4,6 +4,50 @@
          navbar-expand-sm
          navbar-dark
          navbar-toggleable-sm">
+        <div class="container-fluid pd-0">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                <img id="logo" src="~/img/logo.png" alt="logo" height="60" />
+            </a>
+            <button type="button"
+                    class="navbar-toggler"
+                    data-toggle="collapse"
+                    data-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item dropdown">
+                        <a id="navbar-dropdown_account"
+                           role="button"
+                           href="@ViewBag.AccountMenuCurrentItemUrl"
+                           class="nav-link dropdown-toggle"
+                           data-toggle="dropdown"
+                           aria-haspopup="true"
+                           aria-expanded="false">
+                            <span class="nav-link-menu-header">
+                                <span class="k-icon k-i-user"></span>
+                                <span>@(ViewBag.AccountMenuCurrentItem == null ? SharedLocalizer["Account"].Value : ViewBag.AccountMenuCurrentItem)</span>
+                            </span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbar-dropdown_account">
+                            @if (!User.Identity!.IsAuthenticated)
+                            {
+                                <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="SignIn">@SharedLocalizer["SignIn"].Value</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="SignUp">@SharedLocalizer["SignUp"].Value</a>
+                            }
+                            else
+                            {
+                                <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Index">@ViewBag.DisplayName</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="SignOff">@SharedLocalizer["SignOut"].Value</a>
+                            }
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
         @await Html.PartialAsync("SetCulture")
     </nav>
 </header>

@@ -1,4 +1,5 @@
 using DAL;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
@@ -26,17 +27,20 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
     options.SupportedUICultures = supportedCultures;
 });
 
-// Telerik.
 builder.Services.AddKendo();
 
-// Отмена автоматического перевода JSON в camal-case в HTTP-response.
 builder.Services.AddMvc()
     .AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
 
-// Чтобы context прилетал в конструктор контроллера.
 builder.Services.AddDbContext<AppDbContext>(options => options
     .UseSqlite(builder.Configuration.GetConnectionString("SQLite"), 
-       options => options.MigrationsAssembly("WebApplication1_Test")));
+        options => options.MigrationsAssembly("WebApplication1_Test")));
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = new PathString("/Error/Page401");
+    });
 #endregion
 
 #region app
@@ -62,6 +66,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
