@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using WebApplication1_Test.Models;
 
 namespace WebApplication1_Test.Controllers
 {
