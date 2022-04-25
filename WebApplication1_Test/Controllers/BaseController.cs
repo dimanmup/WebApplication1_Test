@@ -45,7 +45,7 @@ namespace WebApplication1_Test.Controllers
                     return;
                 }
 
-                ViewBag.DisplayName = user.DisplayName;
+                ViewBag.DisplayName = user.Email;
 
                 string[] cookieRoles = User.Claims.Where(c => c.Type == ClaimTypes.Role).Select(r => r.Value).ToArray();
 

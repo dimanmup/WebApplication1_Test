@@ -40,7 +40,6 @@
                             }
                             else
                             {
-                                <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Index">@ViewBag.DisplayName</a>
                                 <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="SignOff">@SharedLocalizer["SignOut"].Value</a>
                             }
                         </div>
@@ -50,4 +49,12 @@
         </div>
         @await Html.PartialAsync("SetCulture")
     </nav>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <style>
+            #navbar-dropdown_account .k-i-user {
+                color: #4bff00;
+            }
+        </style>
+    }
 </header>

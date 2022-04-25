@@ -70,7 +70,6 @@ namespace WebApplication1_Test.Controllers
                 ModelState.AddModelError("", sharedLocalizer["EmailOrPasswordInvalid"].Value);
                 return View(model);
             }
-
             #endregion
 
             await Authenticate(user.Email, user.DisplayName, user.Roles.ToArray());
