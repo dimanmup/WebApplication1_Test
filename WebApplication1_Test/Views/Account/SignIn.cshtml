@@ -1,4 +1,9 @@
 ﻿@model SignInModel
+@{
+    ViewBag.Title =
+    ViewBag.AccountMenuCurrentItem = SharedLocalizer["SignIn"];
+    ViewBag.AccountMenuCurrentItemUrl = Context.Request.Path;
+}
 <script>
     function showHidePasswordValue() {
         if ($("#Password").attr("type") == "password") {

@@ -41,3 +41,19 @@ label {
     margin-right: 15px;
     padding-left: 30px;
 }
+#culture-menu {
+    font-size: 11pt;
+}
+#culture-menu select {
+    background-color: #4e61d5;
+    color: #d7e9ef;
+}
+.nav-link {
+    line-height: 4;
+}
+.navbar .nav-link:hover {
+    box-shadow: 0px 2px 0px white inset;
+    color: white !important;
+    -webkit-transition: box-shadow 1s;
+    transition: box-shadow 1s;
+}
