@@ -120,6 +120,24 @@
   <data name="EmailOrPasswordInvalid" xml:space="preserve">
     <value>Invalid email, name or password.</value>
   </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Error401Message" xml:space="preserve">
+    <value>The resource is available only to authorized users.</value>
+  </data>
+  <data name="Error403Message" xml:space="preserve">
+    <value>Insufficient rights to access the resource.</value>
+  </data>
+  <data name="Error404Message" xml:space="preserve">
+    <value>The page was not found. Select the desired action on the site page.</value>
+  </data>
+  <data name="Error408Message" xml:space="preserve">
+    <value>The link is out of date.</value>
+  </data>
+  <data name="ErrorInternalServerMessage" xml:space="preserve">
+    <value>An unexpected error has occurred. The message was sent to the developer.</value>
+  </data>
   <data name="MustBeStrongPassword" xml:space="preserve">
     <value>The field "{0}" must contain at least one Latin letter ('a'-'z', 'A'-'Z'), digit ('0'-'9') and non-alphanumeric character ('*', '_').</value>
     <comment>format string</comment>

@@ -120,6 +120,24 @@
   <data name="EmailOrPasswordInvalid" xml:space="preserve">
     <value>Неверная почта, имя или пароль.</value>
   </data>
+  <data name="Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="Error401Message" xml:space="preserve">
+    <value>Ресурс доступен только авторизованным пользователям.</value>
+  </data>
+  <data name="Error403Message" xml:space="preserve">
+    <value>Недостаточно прав для доступа к ресурсу.</value>
+  </data>
+  <data name="Error404Message" xml:space="preserve">
+    <value>Страница не найдена. Выберите нужное действие на странице сайта.</value>
+  </data>
+  <data name="Error408Message" xml:space="preserve">
+    <value>Ссылка устарела.</value>
+  </data>
+  <data name="ErrorInternalServerMessage" xml:space="preserve">
+    <value>Произошла непредвиденная ошибка. Сообщение отправлено разработчику.</value>
+  </data>
   <data name="MustBeStrongPassword" xml:space="preserve">
     <value>Поле "{0}" должно содержать хотя бы одну латинскую букву ('a'-'z', 'A'-'Z'), цифру ('0'-'9') и один специфичный знак ('*', '_').</value>
     <comment>format string</comment>

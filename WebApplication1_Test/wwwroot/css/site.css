@@ -57,3 +57,7 @@ label {
     -webkit-transition: box-shadow 1s;
     transition: box-shadow 1s;
 }
+.http-status {
+    color: #979797;
+    font-family: Consolas;
+}

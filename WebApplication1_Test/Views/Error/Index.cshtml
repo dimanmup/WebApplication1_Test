@@ -2,7 +2,9 @@
 @{
     ViewBag.Title = SharedLocalizer["Error"].Value;
 }
-<h1 class="text-danger mg-t-15">@Model.Title</h1>
-<div class="http-status">@Model.StatusCode.ToString() @((int)Model.StatusCode)</div>
-<hr />
-<div class="text-danger">@Model.Message</div>
+<div class="pd-l-15">
+    <h1 class="text-danger mg-t-15">@Model.Title</h1>
+    <div class="http-status">@Model.StatusCode.ToString() @((int)Model.StatusCode)</div>
+    <hr />
+    <div class="text-danger">@Model.Message</div>
+</div>
