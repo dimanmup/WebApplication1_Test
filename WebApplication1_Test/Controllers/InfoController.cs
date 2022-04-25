@@ -13,6 +13,11 @@ namespace WebApplication1_Test.Controllers
         {
         }
 
+        /// <summary>
+        /// Если проверяешь в режиме Debug, нажми Continue, чтобы увидеть страницу обработки ошибки.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="AggregateException"></exception>
         public IActionResult GenError500Tree()
         {
             throw new AggregateException(
